@@ -6,4 +6,5 @@
 
 import React from "react";
 import Greeting from "./greeting";
-
+// import Example from "./example";
+import './styles/style.scss';

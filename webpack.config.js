@@ -4,17 +4,25 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
 	context: __dirname + "/src",
 	entry: {
-		javscript: "./index.js", 
+		javscript: "./script.js", 
 		html: "./index.html",
 	},
 	output: {
 		path: __dirname + '/dist',
-	    filename: '[name].js',
-        chunkFilename: '[id].[chunkhash].js'
+		 filename: '[name].js',
+		 sourceMapFilename: '[name].[hash:8].map',
+		 chunkFilename: '[id].[hash:8].js'
 	},
    	plugins: [
-     	new HtmlWebpackPlugin({title: 'Output Management'})
+     	new HtmlWebpackPlugin({
+     		filename: 'index.html',
+     		template: './index.html'
+     	})
    	],
+   	mode:'development',
+	devServer: {
+	    port: 3000
+	},
 	module: {
 	  	rules: [
 			{
@@ -24,19 +32,36 @@ module.exports = {
 			},
 			{
 			    test: /\.html$/,
-			    use: [ {
-			      	loader: 'html-loader',
-			      	options: {
-			        	minimize: true
-			      	}
-			    }]
+			    use: [ 
+			    	{
+				      	loader: 'html-loader',
+				      	options: {
+				        	minimize: true
+				      	}
+					}
+			    ]
 			},
-			{
-	            test: /\.scss$/,
-	            use: [
-	                "style-loader", "css-loader", "sass-loader"
-	            ]
-	        }			
+            {
+                test:/\.(s*)css$/,
+                use:[
+                	{
+	                	loader: 'style-loader',
+						options: {
+			                sourceMap: true
+			            }	                	
+	                },{
+	                	loader: 'css-loader',
+						options: {
+			                sourceMap: true
+			            }	           
+	                }, {
+	                	loader: 'sass-loader',
+						options: {
+			                sourceMap: true
+			            }	           
+	                }
+                ]
+            }	
 	  	],
 	}
 }
