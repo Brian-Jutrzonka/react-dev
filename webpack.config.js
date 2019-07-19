@@ -4,14 +4,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
 	context: __dirname + "/src",
 	entry: {
-		javscript: "./script.js", 
+		javascript: "./script.js", 
 		html: "./index.html",
 	},
 	output: {
 		path: __dirname + '/dist',
-		 filename: '[name].js',
-		 sourceMapFilename: '[name].[hash:8].map',
-		 chunkFilename: '[id].[hash:8].js'
+		filename: '[name].js',
+		sourceMapFilename: '[name].[hash:8].map',
+		chunkFilename: '[id].[hash:8].js'
 	},
    	plugins: [
      	new HtmlWebpackPlugin({
