@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = \"<!doctype html> <html> <head> <meta charset=utf-8> <title>Webpack + React</title> </head> <body>sdggrerh</body> </html>\";\n\n//# sourceURL=webpack:///./index.html?");
+eval("module.exports = \"<!doctype html> <html> <head> <meta charset=utf-8> <title>Webpack + React</title> </head> <body> <div id=app></div> </body> </html>\";\n\n//# sourceURL=webpack:///./index.html?");
 
 /***/ })
 

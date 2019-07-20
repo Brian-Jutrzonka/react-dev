@@ -23,6 +23,11 @@ module.exports = {
 	devServer: {
 	    port: 3000
 	},
+	resolve: {
+		alias: {
+	  		scss_variables: path.resolve(__dirname + "/src/")
+		}
+	},
 	module: {
 	  	rules: [
 			{
@@ -58,10 +63,10 @@ module.exports = {
 	                	loader: 'sass-loader',
 						options: {
 			                sourceMap: true
-			            }	           
+			            }
 	                }
                 ]
-            }	
-	  	],
+            }
+	  	]
 	}
 }

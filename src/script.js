@@ -1,9 +1,9 @@
+import ReactDOM from 'react-dom'
 import React from "react";
-import Greeting from "./greeting";
-import Example from "./example.jsx";
-import './styles/style.scss';
+import Example from "./components/example/example.jsx";
+import './style.scss';
 
-React.render(
+ReactDOM.render(
 	<Example/>,
-	document.body
+	document.getElementById('app')
 );
